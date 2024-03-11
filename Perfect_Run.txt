@@ -1,0 +1,110 @@
+INPUT 
+
+var x,y,z,v,w;
+procedure a;
+var x,y,u,v;
+procedure b;
+var y,z,v;
+procedure c;
+var y,z;
+begin
+z:=1;
+x:=y+z+w
+end;
+begin
+y:=x+u+w;
+call c
+end;
+begin
+z:=2;
+u:=z+w;
+call b
+end;
+begin
+x:=1; y:=2; z:=3; v:=4; w:=5;
+x:=v+w;
+write z;
+call a;
+end.
+
+
+OUTPUT TO TERMINAL 
+var x,y,z,v,w;
+procedure a;
+var x,y,u,v;
+procedure b;
+var y,z,v;
+procedure c;
+var y,z;
+begin
+z:=1;
+x:=y+z+w
+end;
+begin
+y:=x+u+w;
+call c
+end;
+begin
+z:=2;
+u:=z+w;
+call b
+end;
+begin
+x:=1; y:=2; z:=3; v:=4; w:=5;
+x:=v+w;
+write z;
+call a;
+end.
+
+
+No errors, program is syntactically correct
+Assembly Code:
+Line    OP      L       M
+0       JMP     0       87
+1       INC     0       5
+2       LIT     0       1
+3       STO     0       4
+4       LOD     0       3
+5       LOD     0       4
+6       OPR     0       1
+7       LOD     3       7
+8       OPR     0       1
+9       STO     2       3
+10      OPR     0       0
+11      INC     0       6
+12      LOD     1       3
+13      LOD     1       5
+14      OPR     0       1
+15      LOD     2       7
+16      OPR     0       1
+17      STO     0       3
+18      CAL     0       3
+19      OPR     0       0
+20      INC     0       7
+21      LIT     0       2
+22      STO     1       5
+23      LOD     1       5
+24      LOD     1       7
+25      OPR     0       1
+26      STO     0       5
+27      CAL     0       33
+28      OPR     0       0
+29      INC     0       8
+30      LIT     0       1
+31      STO     0       3
+32      LIT     0       2
+33      STO     0       4
+34      LIT     0       3
+35      STO     0       5
+36      LIT     0       4
+37      STO     0       6
+38      LIT     0       5
+39      STO     0       7
+40      LOD     0       6
+41      LOD     0       7
+42      OPR     0       1
+43      STO     0       3
+44      LOD     0       5
+45      SYS     0       1
+46      CAL     0       60
+47      SYS     0       3
